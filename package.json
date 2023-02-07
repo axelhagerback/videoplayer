@@ -2,7 +2,6 @@
   "name": "videoplayer",
   "version": "0.0.0",
   "private": true,
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -10,6 +9,7 @@
   },
   "dependencies": {
     "dotenv": "^16.0.3",
+    "express": "^4.18.2",
     "vue": "^3.2.45"
   },
   "devDependencies": {
