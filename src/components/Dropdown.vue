@@ -8,25 +8,27 @@
     ListboxOption,
   } from '@headlessui/vue'
   
-  const people = [
+  const videos = [
     { name: 'Wade Pooper' },
     { name: 'Arlene Mccoy' },
     { name: 'Devon Webb' },
     { name: 'Tom Cook' },
     { name: 'Tanya Fox' },
     { name: 'Hellen Schmidt' },
+    { name: 'Anka Kalle' },
+    { name: 'Big ManStinkie' },
   ]
-  const selectedPerson = ref(people[0])
+  const selectedVideo= ref(videos[0])
   </script>
 
   <template>
     <div class="float-right m-6 top-16 w-72">
-      <Listbox v-model="selectedPerson">
+      <Listbox v-model="selectedVideo">
         <div class="relative mt-1">
           <ListboxButton
             class="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm"
           >
-            <span class="block truncate">{{ selectedPerson.name }}</span>
+            <span class="block truncate">{{ selectedVideo.name }}</span>
             <span
               class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2"
             >
@@ -47,9 +49,9 @@
             >
               <ListboxOption
                 v-slot="{ active, selected }"
-                v-for="person in people"
-                :key="person.name"
-                :value="person"
+                v-for="video in videos"
+                :key="video.name"
+                :value="video"
                 as="template"
               >
                 <li
@@ -63,7 +65,7 @@
                       selected ? 'font-medium' : 'font-normal',
                       'block truncate',
                     ]"
-                    >{{ person.name }}</span
+                    >{{ video.name }}</span
                   >
                   <span
                     v-if="selected"
