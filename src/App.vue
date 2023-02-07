@@ -1,10 +1,11 @@
 <script setup>
 import HomeView from "./views/HomeView.vue";
+import Header from "./components/Header.vue";
 </script>
 
 <template>
-  <main>
-    <p class="text-2xl">It is alive</p>
+  <main >
+    <Header/>
     <HomeView />
   </main>
 </template>
