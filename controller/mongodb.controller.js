@@ -2,7 +2,7 @@ import { MongoClient, ServerApiVersion } from "mongodb";
 import dotenv from "dotenv";
 
 dotenv.config();
-const uri = process.env.mongodb_URI;
+const uri = process.env.mongodb_uri;
 
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
@@ -10,13 +10,7 @@ const client = new MongoClient(uri, {
   serverApi: ServerApiVersion.v1,
 });
 
-const db = client.db("videoApp");
+const db = client.db("video-library");
 
-export const video = db.collection("video-library.video");
+export const video = db.collection("video");
 export default db;
-
-client.connect((err) => {
-  const collection = client.db("test").collection("devices");
-
-  client.close();
-});
