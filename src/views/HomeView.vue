@@ -2,25 +2,21 @@
 
 <script>
 export default {
-  mounted: {
+  methods: {
     getVideo() {
       const XHR = new XMLHttpRequest();
 
-      XHR.onload = (res) => {
-        let video = [];
-        video.forEach((videos) => {
-          video.push(videos);
-        });
+      XHR.onload = function () {
+        video.push(JSON.parse(this.responseText));
+        return;
       };
 
       XHR.open("GET", "/video");
       XHR.send();
     },
-  },
-  methods: {
     addVideo() {
-      XHR.open("POST", "render");
-      XHR.send("link");
+      XHR.open("POST", "/video");
+      XHR.send("");
     },
     showVideo() {
       XHR.open("GET", `/video/${id}`);
