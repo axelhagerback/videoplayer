@@ -22,11 +22,11 @@
   </script>
 
   <template>
-    <div class="float-right m-6 top-16 w-72">
+    <div class="float-right m-6 top-16 w-72 text-white">
       <Listbox v-model="selectedVideo">
         <div class="relative mt-1">
           <ListboxButton
-            class="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm"
+            class="relative w-full cursor-default rounded-lg bg-red-700 py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm"
           >
             <span class="block truncate">{{ selectedVideo.name }}</span>
             <span
