@@ -1,14 +1,23 @@
-<script setup></script>
+<script setup>
+</script>
 
-<script>
+<script >
 export default {
+  data() {
+    return{
+      video: [],  
+    }
+  },
   methods: {
-    getVideo() {
+     getVideo() {
       const XHR = new XMLHttpRequest();
 
-      XHR.onload = function () {
-        video.push(JSON.parse(this.responseText));
-        return;
+      const that = this;
+      XHR.onload = function (res) {
+        that.video = JSON.parse(this.responseText).videos;
+        console.log(that.video); 
+        /*console.log(res.body)
+        return;*/
       };
 
       XHR.open("GET", "/video");
@@ -23,9 +32,13 @@ export default {
       XHR.send();
     },
   },
+  mounted() {
+    this.getVideo()
+  },
 };
 </script>
 
 <template>
   <p>This is the home view</p>
+  <li v-for="video in video" >{{ video }}</li>
 </template>
